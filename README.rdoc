@@ -1,0 +1,32 @@
+LocalDataCacher
+===========
+
+PURPOSE
+-------
+The purpose of save some data locallly for a period of time
+
+
+INSTALLATION
+------------
+        1) Next you can install local_data_cacher
+            gem install local_data_cacher
+
+        2) That's it.
+
+
+EXAMPLE USAGE
+-------------
+        1) Using the local_data_cacher library to save and load cached data
+            dir = "/tmp/local_data_cacher/#{Time.now.to_i}"
+            
+            # Save some data to a local cache
+            local_data_cacher = LocalDataCacher.new(dir)
+            local_data_cacher.save_data([198.18.154.1, 198.18.154.2, 198.18.154.3, 198.18.154.4], 'giant_list_of_ips')
+
+            # Determine if that data is still fresh
+            local_data_cacher.use_cached_data?('giant_list_of_ips', num_days_cache_file: 1)
+
+            # Load some data from a local cache
+            ips = local_data_cacher.load_data('giant_list_of_ips')
+
+            
