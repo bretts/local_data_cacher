@@ -8,7 +8,7 @@ The purpose of save some data locallly for a period of time
 
 INSTALLATION
 ------------
-        1) Next you can install local_data_cacher
+        1) You can install local_data_cacher via Rubygems.org
             gem install local_data_cacher
 
         2) That's it.
