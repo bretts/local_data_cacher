@@ -29,4 +29,12 @@ class LocalDataCacher
         end
     end
 
+    def print_cached_data_info(file_name)
+        if(File.exists?("#{@cache_dir}/#{file_name}"))
+            age = ((Time.now - File.stat("#{@cache_dir}/#{file_name}").mtime).to_i / 86400.0).round.to_i
+            puts "The locally cached data is currently about #{age} day(s) old"
+        else
+            puts "The file: #{@cache_dir}/#{file_name} does not exist"
+        end
+    end
 end

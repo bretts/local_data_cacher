@@ -23,10 +23,13 @@ EXAMPLE USAGE
             local_data_cacher = LocalDataCacher.new(dir)
             local_data_cacher.save_data([198.18.154.1, 198.18.154.2, 198.18.154.3, 198.18.154.4], 'giant_list_of_ips')
 
-            # Determine if that data is still fresh
+            # Determine if that data is still fresh/exists
             local_data_cacher.use_cached_data?('giant_list_of_ips', num_days_cache_file: 1)
 
             # Load some data from a local cache
             ips = local_data_cacher.load_data('giant_list_of_ips')
+
+            # Print some info on the locally cached file
+            local_data_cacher.print_cached_data_info('giant_list_of_ips')
 
             
