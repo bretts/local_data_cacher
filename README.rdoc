@@ -29,7 +29,7 @@ EXAMPLE USAGE
             # Load some data from a local cache
             ips = local_data_cacher.load_data('giant_list_of_ips')
 
-            # Print some info on the locally cached file
-            local_data_cacher.print_cached_data_info('giant_list_of_ips')
+            # Get some info on the locally cached file
+            puts local_data_cacher.get_cached_data_info('giant_list_of_ips')
 
             
